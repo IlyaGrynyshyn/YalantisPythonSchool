@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %} Форма для додавання курсу {%endblock%}
+{% block content %}
+<h2> Створити курсу </h2>
+  <br/> <br/>
+  <div class="features">
+    <form method="post" enctype="multipart/form-data" >
+      {% csrf_token %}
+      <h5>Укажіть назву</h5>{{ form.title }}<br>
+      <h5>URL</h5>{{ form.slug }}
+      <h5>Короткий опис</h5>{{ form.small_description}}<br>
+      <h5>Опис</h5>{{form.description}}<br>
+      <h5>Дата початку курсу</h5>{{form.start_date}}<br>
+      <h5>Дата закінчення курсу</h5>{{form.end_date}}<br>
+      <h5>Кількість лекцій</h5>{{form.quantity_lections}}<br>
+      <h5>Фото</h5>{{form.photo}}<br>
+      <span>{{ error }}</span><br>
+      <button class='bth btn-success' type='submit'> Опублікувати </button><br><br>
+    </form>
+  </div>
+{% endblock %}

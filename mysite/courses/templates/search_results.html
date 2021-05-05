@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %} Результат пошуку {% endblock %}}
+{% block content %}
+<h1>Результат пошуку:</h1><br>
+
+<ul>
+  {% for product in object_list %}
+    <div class="row">
+    <div class="col-md-10">
+      <a href="{{product.get_absolute_url}}"> <img src="{{ product.photo.url }}" class="img-fluid"></a>
+    </div>
+    <div class="col-md-8">
+        <h4 class="card-title"> <a href="{{product.get_absolute_url}}"> {{ product.title }}</a></h4>
+        <h5> Дата початку:</h5>{{product.start_date}}<br></br>
+
+
+
+
+    </div>
+
+  {% endfor %}
+</ul>
+
+{% endblock content %}

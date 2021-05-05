@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} {{product.title}} {% endblock %}}
+
+{% block content %}
+
+<nav aria-label="breadcrumb" class="mt-3">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'home' %}">Головна</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ product.title }}</li>
+      </ol>
+    </nav>
+
+<div class="row">
+    <div class="col-md-10">
+        <img src="{{ product.photo.url }}" class="img-fluid">
+    </div>
+    <div class="col-md-8">
+        <h3>{{ product.title }}</h3>
+        <h5> Дата початку:</h5>{{product.start_date}}
+        <h5>Дата закінчення: </h5> {{product.end_date}}
+        <h5>Кількість лекцій: </h5> {{product.quantity_lections}}
+        <h5> Опис </h5> {{product.description}}<br></br>
+        <a href="{% url 'product-delete' slug=product.slug %}" class="btn btn-danger"> Видалити </a><br></br>
+        <a href="{% url 'product-update' slug=product.slug %}" class="btn btn-info"> Редагувати </a></br>
+
+    </div>
+
+
+
+
+</div>
+
+
+{% endblock content %}
