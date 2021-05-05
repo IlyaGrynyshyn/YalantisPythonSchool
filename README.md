@@ -6,7 +6,7 @@
 
 1. Відкрити термінал або консоль і перейти в потрібну Вам директорію
 2. Прописати команду `git clone git@github.com:Falex030/YalantisPythonSchool.git`
-3. Якщо Ви використовуєте https, тоді `https://github.com/Falex030/YalantisPythonSchool.git`
+3. Якщо Ви використовуєте https, тоді `git clone https://github.com/Falex030/YalantisPythonSchool.git`
 4. Прописуємо наступні команди:
 - Переходимо в директорію **mysite**
 - `python manage.py migrate`
